@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {AddPlanQuery, Plan} from "../models/plan.model";
-import { v4 as idGenerator } from 'uuid';
+import {v4 as idGenerator} from 'uuid';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +34,7 @@ export class PlannerService {
   }
 
   deleteTask(task: Plan): Plan[] {
-    return this.taskList.filter((plan) => plan.id !== task.id);
+    this.taskList = this.taskList.filter((plan) => plan.id !== task.id);
+    return this.taskList;
   }
 }
