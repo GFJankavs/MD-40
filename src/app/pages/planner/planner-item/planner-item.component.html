@@ -1,4 +1,4 @@
-<div class="task-item">
+<div class="task-item" *ngIf="task">
   <div class="task-item__container">
     <h1 class="task-item__text">{{task.task}}</h1>
     <button (click)="onDelete(task)" class="task-item__delete-button">
