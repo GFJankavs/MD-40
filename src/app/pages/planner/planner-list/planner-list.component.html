@@ -1,0 +1,11 @@
+<div
+  *ngIf="taskList"
+  class="task-list"
+>
+  <app-planner-item
+    *ngFor="let task of taskList"
+    [task]="task"
+    (deleteTaskEvent)="deleteTask($event)"
+  ></app-planner-item>
+</div>
+

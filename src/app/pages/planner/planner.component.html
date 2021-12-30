@@ -1,0 +1,20 @@
+<div class="planner__container">
+  <div class="planner__logo-container">
+    <img
+      alt="Todo Logo"
+      class="planner__logo"
+      src="./assets/images/Todo%20-%20Logo.jpg"
+    >
+  </div>
+  <app-planner-add
+    (addPlanEvent)="addPlan($event)"
+  ></app-planner-add>
+  <div class="planner__list">
+    <app-planner-list
+      (deleteTaskEvent)="deleteTask($event)"
+      [taskList]="taskList"
+    ></app-planner-list>
+  </div>
+</div>
+
+

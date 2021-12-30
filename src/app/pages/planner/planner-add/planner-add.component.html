@@ -1,0 +1,108 @@
+<form [formGroup]="addPlanForm" class="planner__add">
+  <h1 class="planner__add-title">
+    Add Your Todo Task
+  </h1>
+  <div class="input__container">
+    <div class="input__wrapper">
+      <img
+        alt="task icon"
+        class="input__image"
+        src="./assets/images/icons/task.svg"
+      >
+      <input
+        formControlName="task"
+        class="input"
+        name="task"
+        placeholder="Task"
+        type="text"
+      >
+    </div>
+    <div>
+      <span
+        (click)="toggleAdvancedOptions()"
+        class="input__advanced"
+      >
+      <img
+        [ngClass]="showAdvancedOptions ? 'input__advanced-image input__advanced-image--show' : 'input__advanced-image'"
+        alt="angle-down"
+        class="input__advanced-image"
+        src="./assets/images/icons/angle-down-solid.svg"
+      >
+      Advanced Options
+      </span>
+    </div>
+    <div
+      *ngIf="showAdvancedOptions"
+      class="input__advanced-container"
+    >
+      <div
+        class="input__advanced-wrapper"
+      >
+        <div class="input__wrapper">
+          <img
+            alt="calendar icon"
+            class="input__image"
+            src="./assets/images/icons/calendar.svg"
+          >
+          <input
+            formControlName="date"
+            class="input"
+            name="date"
+            placeholder="Date (DD/MM/YYYY)"
+            type="text"
+          >
+        </div>
+        <div class="input__wrapper">
+          <img
+            alt="calendar icon"
+            class="input__image"
+            src="./assets/images/icons/time.svg"
+          >
+          <input
+            formControlName="time"
+            class="input"
+            name="time"
+            placeholder="Time (HH:mm)"
+            type="text"
+          >
+        </div>
+        <div class="input__wrapper">
+          <img
+            alt="calendar icon"
+            class="input__image"
+            src="./assets/images/icons/location.svg"
+          >
+          <input
+            formControlName="location"
+            class="input"
+            name="location"
+            placeholder="Location"
+            type="text"
+          >
+          <input id="textSearchPlaces" name="txtSearchPlaces" type="text">
+        </div>
+        <div class="input__wrapper">
+          <img
+            alt="calendar icon"
+            class="input__image"
+            src="./assets/images/icons/comment.png"
+          >
+          <input
+            formControlName="comments"
+            class="input"
+            name="comments"
+            placeholder="Comments"
+            type="text"
+          >
+        </div>
+      </div>
+    </div>
+    <button
+      [disabled]="addPlanForm.invalid"
+      (click)="addTask()"
+      type="button"
+      class="planner__add-button"
+    >Add Task</button>
+  </div>
+</form>
+

@@ -1,0 +1,31 @@
+<div class="task-item">
+  <div class="task-item__container">
+    <h1 class="task-item__text">{{task.task}}</h1>
+    <button (click)="onDelete(task)" class="task-item__delete-button">
+      <img alt="delete icon" class="task-item__delete-image" src="./assets/images/icons/delete.svg">
+    </button>
+    <div class="task-advanced__container">
+      <div class="task-advanced">
+        <img alt="calendar logo" class="task-advanced__image" src="./assets/images/icons/calendar.svg">
+        <p *ngIf="task.date" class="task-advanced__text">{{task.date}}</p>
+        <p *ngIf="!task.date" class="task-advanced__text task-advanced__text--none">None</p>
+      </div>
+      <div class="task-advanced">
+        <img alt="time logo" class="task-advanced__image" src="./assets/images/icons/time.svg">
+        <p *ngIf="task.time" class="task-advanced__text">{{task.time}}</p>
+        <p *ngIf="!task.time" class="task-advanced__text task-advanced__text--none">None</p>
+      </div>
+      <div class="task-advanced">
+        <img alt="location logo" class="task-advanced__image" src="./assets/images/icons/location.svg">
+        <p *ngIf="task.location" class="task-advanced__text">{{task.location}}</p>
+        <p *ngIf="!task.location" class="task-advanced__text task-advanced__text--none">None</p>
+      </div>
+      <div class="task-advanced">
+        <img alt="comment logo" class="task-advanced__image" src="./assets/images/icons/comment.png">
+        <p *ngIf="task.comments" class="task-advanced__text">{{task.comments}}</p>
+        <p *ngIf="!task.comments" class="task-advanced__text task-advanced__text--none">None</p>
+      </div>
+    </div>
+  </div>
+</div>
+

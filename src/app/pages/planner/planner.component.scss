@@ -1,0 +1,16 @@
+.planner__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.planner__logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.planner__logo {
+  width: 300px;
+}
